@@ -1,0 +1,353 @@
+@import "settings";
+
+html {
+  background: url(../i/main-bg.png);
+}
+
+html, body {
+  height: 100%;
+}
+
+a {
+  color: $lnk-clr;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+main {
+  min-height: 100%;
+  margin: 0 auto -404px;
+}
+
+.main-header {
+  @include padding(13px 0 30px);
+  background: #f4f4f4;
+  nav {
+    @include rounded(4px);
+    border: 1px solid #a41173;
+    background: url(../i/nav-bg.png) repeat-x;
+    height: 49px;
+    display: table;
+    width: 940px;
+    margin: 0 auto;
+  }
+  ul {
+    display: table-row;
+    & > li {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+  }
+  .extra-cont {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    &:hover {
+      .main-item {
+        background: rgba(255, 255, 255, .1);
+      }
+    }
+    .arrow {
+      position: absolute;
+      display: none;
+      top: 46px;
+      left: 50%;
+      margin-left: -2px;
+      z-index: 10;
+      border-style: solid;
+      border-width: 0 4px 4px 4px;
+      border-color: transparent transparent white transparent;
+    }
+    .main-item {
+      width: 100%;
+      text-decoration: none;
+      display: inline-block;
+      height: 49px;
+      line-height: 49px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 1px 0 #921e66;
+    }
+    ol {
+      display: none;
+      position: absolute;
+      @include rounded(4px);
+      @include box-shadow(1px 1px 5px #c2c2c2, -1px 0 5px #c2c2c2);
+      top: 49px;
+      left: 0;
+      background: #fff;
+      z-index: 1;
+      line-height: normal;
+      border-top: 1px solid #a41173;
+      min-width: 100%;
+      &.visible {
+        display: block;
+      }
+      a {
+        text-align: left;
+        white-space: nowrap;
+        height: auto;
+        line-height: normal;
+        color: #d53e94;
+        display: block;
+        @include padding(7px 18px);
+        @include font(17px, $ff-sub);
+        text-decoration: none;
+        &:hover {
+          background: rgba(219, 62, 148, .8);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
+.push {
+  height: 404px;
+}
+
+.main-footer {
+  height: 404px;
+  background: #f4f4f4;
+  .clrfix {
+    @include centered();
+    @include padding-bottom(36px);
+    small {
+      float: left;
+    }
+  }
+  .news-box {
+    @include centered();
+    @include padding(25px 0 0);
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      color: $lnk-clr;
+      @include margin-bottom(23px);
+      position: relative;
+      @include font(16px, $ff);
+      ins {
+        height: 1px;
+        display: block;
+        background: #9b9b9b;
+        width: 40%;
+        position: absolute;
+        top: 50%;
+        &:first-child {
+          left: 0;
+        }
+        &:last-child {
+          right: 0;
+        }
+      }
+    }
+    ul {
+      display: table;
+      width: 100%;
+      li {
+        display: table-cell;
+        width: 33.3%;
+      }
+    }
+    .new-date {
+      display: block;
+      font-style: oblique;
+      color: $txt-clr;
+      @include margin-bottom(14px);
+    }
+    .full-story {
+      @include font(17px, $ff);
+      &:hover {
+        color: $txt-clr;
+        text-decoration: none;
+      }
+    }
+  }
+  .separator {
+    border-top: 1px solid #fff;
+    height: 4px;
+    @include linear-gradient(#b1b1b1, #ededed);
+    @include margin(42px 0);
+  }
+  .foot-bg {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 14px;
+    @include linear-gradient(#444, #a0a0a0);
+    span {
+      position: absolute;
+      width: 100%;
+      top: -3px;
+      display: block;
+      height: 2px;
+      background: #c9c2ba;
+      border-top: 1px solid #9b9690;
+      border-bottom: 1px solid #dfd7cf;
+    }
+  }
+  .foot-nav {
+    @include centered();
+    @include margin-bottom(38px);
+    text-align: justify;
+    li {
+      @include font(17px, $ff);
+      display: inline;
+      a {
+        display: inline-block;
+        &:hover {
+          text-decoration: none;
+          color: $txt-clr;
+        }
+      }
+    }
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+  }
+  form {
+    float: left;
+    @include margin(0 48px);
+    .field-wrap {
+      position: relative;
+      input[type=text] {
+        height: 30px;
+        @include box-sizing();
+        @include rounded(20px);
+        @include padding(0 8px);
+        @include shadow-inset(1px, 2px, 2px, #bdbdbd);
+        border: 1px solid #ebebeb;
+        min-width: 220px;
+        &:focus {
+          outline: none;
+        }
+      }
+      input[type=image] {
+        position: absolute;
+        top: 7px;
+        right: 11px;
+        cursor: pointer;
+      }
+    }
+    .socials-box {
+      padding: 0;
+      @include margin-top(11px);
+      a {
+        float: left;
+        @include margin-right(22px);
+        @include spite();
+        &.fb {
+          width: 9px;
+          height: 16px;
+        }
+        &.tw {
+          width: 15px;
+          height: 14px;
+          background-position: 0 -16px;
+        }
+        &.ok {
+          width: 12px;
+          height: 19px;
+          background-position: 0 -32px;
+        }
+        &.vk {
+          width: 18px;
+          height: 18px;
+          background-position: 0 -53px;
+        }
+      }
+    }
+  }
+  .payment-box {
+    position: relative;
+    float: right;
+    width: 304px;
+    li {
+      @include margin(0 16px 6px 0);
+      display: inline-block;
+      min-height: 26px;
+      vertical-align: middle;
+      &:nth-child(6n + 6) {
+        margin-right: 0;
+      }
+    }
+    a {
+      @include spite();
+      display: inline-block;
+      vertical-align: middle;
+      &.mastercard {
+        width: 33px;
+        height: 21px;
+        background-position: 0 -72px;
+      }
+      &.visa {
+        width: 38px;
+        height: 13px;
+        background-position: 0 -95px;
+      }
+      &.webmoney {
+        width: 28px;
+        height: 28px;
+        background-position: 0 -112px;
+      }
+      &.cyber {
+        width: 39px;
+        height: 23px;
+        background-position: 0 -140px;
+      }
+      &.qiwi {
+        width: 26px;
+        height: 27px;
+        background-position: 0 -163px;
+      }
+      &.paypal {
+        background-position: 0 -191px;
+        width: 39px;
+        height: 11px;
+      }
+      &.rapida {
+        background-position: 0 -203px;
+        width: 37px;
+        height: 28px;
+      }
+      &.yamoney {
+        background-position: 0 -234px;
+        width: 24px;
+        height: 27px;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
