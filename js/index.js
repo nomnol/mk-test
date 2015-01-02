@@ -1,19 +1,21 @@
-
-var navItem = document.querySelectorAll('.extra-cont');
-
+    var navItem = document.querySelectorAll('.extra-cont');
     for(var n = 0; n < navItem.length; n ++) {
-        navItem[n].addEventListener('mouseover', function () {
+        navItem[n].addEventListener('mouseover', function(){
             var list = this.querySelector('ol');
             list.setAttribute('class', 'visible');
         })
-        navItem[n].addEventListener('mouseout', function () {
+        navItem[n].addEventListener('mouseout', function(){
             var thisItem = this;
-            setTimeout(function () {
-                var list = thisItem.querySelector('ol');
+            var list = thisItem.querySelector('ol');
+            setTimeout(function (){
                 list.setAttribute('class', '');
             }, 1500)
         })
     }
+
+
+
+
 
 
 

@@ -28,7 +28,7 @@ main {
     @include rounded(4px);
     border: 1px solid #a41173;
     background: url(../i/nav-bg.png) repeat-x;
-    height: 49px;
+//    height: 49px;
     display: table;
     width: 940px;
     margin: 0 auto;
@@ -44,8 +44,6 @@ main {
   .extra-cont {
     position: relative;
     width: 100%;
-    height: auto;
-
     &:hover {
       .main-item {
         background: rgba(255, 255, 255, .1);
@@ -84,8 +82,10 @@ main {
       line-height: normal;
       border-top: 1px solid #a41173;
       min-width: 100%;
+//      opacity: 0;
       &.visible {
         display: block;
+        @include animation('dropDownMenuOpacity 1s');
       }
       a {
         text-align: left;
@@ -327,7 +327,10 @@ main {
   }
 }
 
-
+@include keyframes(dropDownMenuOpacity) {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
 
 
 
