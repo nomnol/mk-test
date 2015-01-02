@@ -1,29 +1,31 @@
+
+var navItem = document.querySelectorAll('.extra-cont');
+
+    for(var n = 0; n < navItem.length; n ++) {
+        navItem[n].addEventListener('mouseover', function () {
+            var list = this.querySelector('ol');
+            list.setAttribute('class', 'visible');
+        })
+        navItem[n].addEventListener('mouseout', function () {
+            var thisItem = this;
+            setTimeout(function () {
+                var list = thisItem.querySelector('ol');
+                list.setAttribute('class', '');
+            }, 1500)
+        })
+    }
+
+
+
+
+
+
+
+
+
+//$(function() {
+
 /*
-
-var navItem = document.querySelector('.extra-cont');
-
-    navItem.addEventListener('mouseover', function() {
-        var list = this.querySelector('ol');
-        list.setAttribute('class', 'visible');
-    })
-
-    navItem.addEventListener('mouseout', function() {
-        var thisItem = this;
-        setTimeout(function() {
-            var list = thisItem.querySelector('ol');
-            list.setAttribute('class', '');
-        },1500)
-    })
-*/
-
-
-
-
-
-
-
-$(function() {
-
     var navItem = $('.main-nav .extra-cont');
 
     navItem.hover(function() {
@@ -33,6 +35,7 @@ $(function() {
         $(this).find('ol').fadeOut(1000);
         $(this).find('.arrow').fadeOut(500);
     })
+*/
 
 
 /*
@@ -59,4 +62,4 @@ $(function() {
     })
 */
 
-});
+//});
