@@ -8,7 +8,7 @@
             var thisItem = this;
             var list = thisItem.querySelector('ol');
             setTimeout(function (){
-                list.setAttribute('class', '');
+                list.removeAttribute('class');
             }, 1500)
         })
     }
