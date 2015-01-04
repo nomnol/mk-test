@@ -44,6 +44,7 @@ main {
   .extra-cont {
     position: relative;
     width: 100%;
+    z-index: 1;
     &:hover {
       .main-item {
         background: rgba(255, 255, 255, .1);
@@ -75,12 +76,12 @@ main {
       position: absolute;
       @include rounded(4px);
       @include box-shadow(1px 1px 5px #c2c2c2, -1px 0 5px #c2c2c2);
-      top: 49px;
+      top: 50px;
       left: 0;
       background: #fff;
       z-index: 1;
       line-height: normal;
-      border-top: 1px solid #a41173;
+//      border-top: 1px solid #a41173;
       min-width: 100%;
 //      opacity: 0;
       &.visible {

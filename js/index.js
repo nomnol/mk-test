@@ -3,15 +3,26 @@
         navItem[n].addEventListener('mouseover', function(){
             var list = this.querySelector('ol');
             list.setAttribute('class', 'visible');
-        })
-        navItem[n].addEventListener('mouseout', function(){
-            var thisItem = this;
-            var list = thisItem.querySelector('ol');
-            setTimeout(function (){
-                list.removeAttribute('class');
-            }, 1500)
+            console.log(this, list);
+            /*
+            list.addEventListener('mousemove', function() {
+                console.log('asdf');
+            })
+            console.log(list);
+*/
         })
     }
+
+/*
+    navItem[n].addEventListener('mouseout', function(){
+        var list = this.querySelector('ol');
+        setTimeout(function (){
+            list.removeAttribute('class');
+            console.log(list);
+        }, 1500)
+    })
+*/
+
 
 
 
